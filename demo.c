@@ -148,7 +148,7 @@ int main (int argc, char **argv)
 		HPDF_Page_MoveTextPos(page, tBaseW, (pageHeight - 96)); //(30 + 50 + 14 + 2)
 		HPDF_Page_ShowText(page, tableHeadings[tHidx]);
 		HPDF_Page_EndText(page);
-		tBaseW += (strlen(tableHeadings[tHidx])*14);
+		tBaseW += ((strlen(tableHeadings[tHidx]) + 4) * 8 );
 	}
 
 	/* Table Header Line */
@@ -191,7 +191,7 @@ int main (int argc, char **argv)
 			}
 			HPDF_Page_ShowText(page, tBuff);
 			HPDF_Page_EndText(page);
-			tBaseW += (strlen(tableHeadings[tDidx])*14);
+			tBaseW += ((strlen(tableHeadings[tDidx]) + 4) * 8 );
 		}
 		tBaseH += 14; // 12 + 2
 	}
